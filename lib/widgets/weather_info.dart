@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/theme.dart';
+import '../utils/weather_icons.dart';
 
 class WeatherInfo extends StatelessWidget {
   final Map<String, dynamic>? weatherData;
@@ -22,20 +24,50 @@ class WeatherInfo extends StatelessWidget {
             height: 64,
             fit: BoxFit.contain,
           ),
-        Text(
-          'Location: $locationName',
-          style: Theme.of(context).textTheme.bodyLarge,
-          textAlign: TextAlign.center,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.my_location,
+              color: WeatherColorScheme.iconColor,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'Location: $locationName',
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
-        Text(
-          'Temperature: ${tempCelcius.toString()}°C',
-          style: Theme.of(context).textTheme.bodyLarge,
-          textAlign: TextAlign.center,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.thermostat,
+              color: WeatherColorScheme.iconColor,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'Temperature: ${tempCelcius.toString()}°C',
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
-        Text(
-          'Condition: $condition',
-          style: Theme.of(context).textTheme.bodyLarge,
-          textAlign: TextAlign.center,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              getWeatherIcon(condition),
+              color: WeatherColorScheme.iconColor,
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'Condition: $condition',
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ],
     );

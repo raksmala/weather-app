@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Weather App',
-      theme: appTheme, // Use the new theme
+      theme: appTheme,
       home: const MyWeatherHomePage(),
     );
   }

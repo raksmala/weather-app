@@ -10,6 +10,7 @@ class WeatherColorScheme {
   static Color appBarTextColor = colorScheme.onPrimary;
   static Color backgroundColor = colorScheme.surface;
   static Color textColor = colorScheme.onSurface;
+  static Color iconColor = appBarColor;
 }
 
 final ThemeData appTheme = ThemeData(
